@@ -17,6 +17,10 @@ import Dashboard from './scenes/dashboard/Dashboard'
 // import Calendar from './scenes/calendar'
 import { Route, Routes } from 'react-router-dom'
 import { ProSidebarProvider } from 'react-pro-sidebar'
+import Team from './scenes/Team/Team'
+import Contacts from './scenes/Contacts/Contacts'
+import Invoices from './scenes/Invoices/Invoices'
+import Form from './scenes/Form/Form'
 
 function App() {
   const [theme, colorMode] = useMode()
@@ -28,11 +32,15 @@ function App() {
         <ProSidebarProvider>
           <div className="app">
             <Sidebar />
-            <main className="content"></main>
-            {/* <TopBar /> */}
-            <Routes>
-              <Route path="/" element={<Dashboard />}></Route>
-              {/* <Route path="/team" element={<Team />}></Route>
+            <main className="content">
+              <TopBar />
+              <Routes>
+                <Route path="/" element={<Dashboard />}></Route>
+                <Route path="/team" element={<Team />}></Route>
+                <Route path="/contacts" element={<Contacts />}></Route>
+                <Route path="/invoices" element={<Invoices />}></Route>
+                <Route path="/form" element={<Form />}></Route>
+                {/* <Route path="/team" element={<Team />}></Route>
             <Route path="/contacts" element={<Contacts />}></Route>
             <Route path="/invoices" element={<Invoices />}></Route>
             <Route path="/form" element={<Form />}></Route>
@@ -42,7 +50,8 @@ function App() {
             <Route path="/faq" element={<FAQ />}></Route>
             <Route path="/geography" element={<Geography />}></Route>
             <Route path="/calendar" element={<Calendar />}></Route> */}
-            </Routes>
+              </Routes>
+            </main>
           </div>
         </ProSidebarProvider>
       </ThemeProvider>
